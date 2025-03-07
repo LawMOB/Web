@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+
+:root {
+  --bg: #000000;
+  --clr-1: #00c2ff;
+  --clr-2: #FFB6C1;
+  --clr-3: #fc6c85;
+  --clr-4: #FADADD;
+
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+
+button, a {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 70vh;
+    display: grid;
+    overflow: hidden;
+    place-items: center;
+    background-color: var(--bg);
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  font-size: 1.7vmin;
+  font-family: JetBrains Mono, monospace;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #e4bb68;
+  text-shadow: 1px 2px 2px #000;
+  padding-bottom: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.string {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.greeting {
+  position: relative;
+  top: 13.6vmin;
+  animation: move 4s infinite;
+}
+
+.closure::after {
+  content: '';
+  position: absolute;
+  height: 20vmin;
+  width: 47vmin;
+  background: var(--bg);
+  transform: translate(-45vmin, -19.7vmin);
+}
+
+.closure::before {
+  content: '';
+  position: absolute;
+  height: 53vmin;
+  width: 47vmin;
+  background: var(--bg);
+  transform: translate(-40vmin, 4vmin);
+}
+
+.en {
+  color: #1f5f5b;
+  text-shadow: 1px 2px 2px #000;
+}
+
+.id {
+  color: white;
+  text-shadow: 1px 2px 2px #000;
+}
+
+.es {
+  color: #ffC0CB;
+  text-shadow: 1px 2px 2px #000;
+}
+
+.esp {
+  color: #ffC0CB;
+  text-shadow: 1px 2px 2px #000;
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: block;
+    padding: 5px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    gap: 8px;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+    background: linear-gradient(45deg, #fc6c85, #FADADD);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+    width: 150px;
+    position: relative; /* Tambahkan agar bisa digeser */
+    top: 40px; /* Geser ke bawah (gunakan nilai negatif untuk ke atas) */
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #fc6c85, #FADADD);
+    transform: scale(1.05);
+}
+
+
+.title {
+  font-size: var(--fs);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: var(--ls);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 80px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.subtitle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #fc6c85, #FADADD);
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.subtitle:hover::after {
+    height: 5px;
+    opacity: 1;
+}
+
+.mesh-gradient {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    filter: blur(5rem);
+    z-index: -1;
+}
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+
+@keyframes move {
+  25% {
+    transform: translateY(-4.3vmin);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-8.7vmin);
+  }
+  75% {
+    transform: translateY(-13.4vmin);
+  }
+}
