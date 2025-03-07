@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Apa Hayoo</title>
+</head>
+
+<div class="content">
+  <h1 class="title">Aku punya sesuatu buat Tiaaa!!!
+    <div class="aurora">
+      <div class="aurora__item"></div>
+      <div class="aurora__item"></div>
+      <div class="aurora__item"></div>
+      <div class="aurora__item"></div>
+    </div>
+  </h1>
+  <a href="flower/flower.html" class="button">
+    <i class="fa-solid fa-gift"></i> Click iniiii</a>
+  <p class="subtitle">Created by 66flaw (Arif).</p>
+</div>
+
+<body>
+<div class="footer">
+  <h1>System<span style="color:white;">.<span style="color:#e06c75;">out</span>.</span><span style="color:#61afef;">println</span>("</h1>
+    <div class="string">
+      <h1 class="greeting en">Hello, World!</h1>
+      <h1 class="greeting id">Halo, Dunia!</h1>
+      <h1 class="greeting es">Holla, Tia! <3</h1>
+      <h1 class="greeting esp">Holla, Arif!</h1>  
+   </div>
+      <h1 class="closure">");</h1>
+</div>
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll("button:not(nav button), a:not(nav a)");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetURL = this.href || this.getAttribute("data-href");
+
+            if (targetURL) {
+                setTimeout(() => {
+                    window.location.href = targetURL;
+                }, 300);
+            }
+        });
+    });
+});
+
+</script>
