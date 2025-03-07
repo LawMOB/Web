@@ -47,11 +47,10 @@ body {
     font-weight: bold;
     color: white;
     margin-bottom: 15px;
-    white-space: break-word; /* Pastikan teks tetap satu baris */
-    display: inline-block; /* Agar sejajar dan tidak turun ke bawah */
+    white-space: break-word;
+    display: inline-block;
 }
 
-/* Huruf acak */
 .random {
     font-size: inherit;
     font-weight: inherit;
@@ -59,8 +58,6 @@ body {
     color: #888;
 }
 
-
-/* Huruf final */
 .final {
     color: #fff;
     transition: color 0.4s ease-in-out;
